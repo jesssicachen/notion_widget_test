@@ -29,7 +29,7 @@ body{
 
 .days {
   background: #ffffff;
-  color: #95837e;
+  color: #95837e !important; /* 强制覆盖样式 */
 }
 
 .hours {
@@ -48,7 +48,7 @@ body{
 .numbers {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  color:  #C69239;
+  color:  #C69239 !important; /* 强制覆盖样式 */
   font-size: 4em;
   text-align: center;
 }
@@ -80,9 +80,7 @@ body{
   left: 60%;
   top: 5%;
 
-
 }
-
 
     </style>
 </head>
@@ -90,8 +88,8 @@ body{
     
 <div id="timer">
 
-    <div class="days"> 
-        <div id="days" class="numbers "> </div>days</div> 
+    <div class="days" style="color: #95837e; background: #ffffff;"> 
+        <div id="days" class="numbers" style="color: #C69239;"> </div>days</div> 
 <!--       <div class="hours"> 
         <div  id="hours" class="numbers"> </div>hours</div>  -->
 <!--       <div class="minutes"> 
@@ -129,8 +127,6 @@ let timer = setInterval(function() {
   document.getElementById("minutes").innerHTML=minutes
   document.getElementById("seconds").innerHTML=seconds
 
-
-
-}, 1);
+}, 1000); // 每秒更新一次
 </script>
 </html>
